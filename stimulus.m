@@ -1,4 +1,4 @@
-hi%% set variables
+%% set variables
 fs = 192000;    % sample rate
 dur = 0.3;      % duration in seconds (300 ms)
 
@@ -72,7 +72,7 @@ figure
 spectrogram(high_stim,256,200,256,fs,'yaxis')
 title("High frequency Gaussian white noise (u = 30kHz)");
 
-file_name = 'D:\GitHub\filters\booth1-220823-filter-192kHz.mat';
+file_name = 'C:\Users\jafarb\Desktop\Penn\Rotations\Geffen Lab\Code\booth1-22-08-23-filter-192kHz.mat';
 filt = load(file_name); %Booth 1 filter
 
 %Filter noise
@@ -80,7 +80,7 @@ filtnoise_low = conv(low_stim, filt.FILT, 'same'); %Convolve with speaker calibr
 filtnoise_high = conv(high_stim, filt.FILT, 'same'); %Convolve with speaker calibration filter
 
 %ramp features
-ramp_duration = 0.005;
+ramp_duration = 0.003;
 
 %Add ramps
 RT = ramp_duration*fs; %Ramp length in samples
