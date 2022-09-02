@@ -37,7 +37,7 @@ ramper(end-RT+1:end) = ramper(end-RT+1:end).*flipud(ramp); %Add ramp to end of r
 low_s = filtnoise_low.*ramper; %Apply ramp envelope to filtered noise
 high_s = filtnoise_high.*ramper; %Apply ramp envelope to filtered nois
 
-%Create chanhels channels
+%Create channels channels filled with ones
 x = ones(length(low_s));
 y = ones(length(high_s));
 

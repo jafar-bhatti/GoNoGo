@@ -17,6 +17,8 @@ p = setupSerialPort(params.com,9600);
 fprintf('Making stimuli... '); 
 tic;
 [low_sound, high_sound] = generate_sound(params.filt);
+low_sound = low_sound .* params.AmpF;
+high_sound = high_sound .* params.AmpF;
 toc;
 
 % shuffle the seed to make the trials random each time, but save the state
